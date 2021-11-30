@@ -1,0 +1,15 @@
+<header>
+    <div class="content-wrapper">
+        <h1 class="header-logo">Studio<span>Emery</span></h1>
+        <nav id="menu" class="hide-menu slide-in">
+            <ul>
+                {% for item in navigation.items %}
+                <li>
+                    <a href="{{ item.url }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <i class="fas fa-bars fa-2x" id="menu-toggle" onclick="navMenu()"></i>
+    </div>
+</header>

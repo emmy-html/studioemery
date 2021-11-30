@@ -1,0 +1,14 @@
+<footer class="red-section">
+    <div class="content-wrapper">
+        <h1 class="footer-logo">Studio <span>Emery</span></h1>
+        <nav class="footer-social-media">
+            <ul>
+                {% for item in social.items %}
+                <li>
+                    <a href="{{ item.url }}"><img src="{{ item.svg }}" alt="{{ item.alt }}" /></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        </div>
+</footer>

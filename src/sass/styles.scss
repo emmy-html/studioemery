@@ -1,12 +1,445 @@
 $heading-font: 'Playfair Display', serif;
 $body-font: 'Chivo', sans-serif;
-
+@import "colors";
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
 body {
     font-family: $body-font;
+    font-size: 16px;
+    margin: 0;
+}
+/* typography 
+heading styles */
+h1, h2 {
+    font-family: $heading-font;
+    text-transform: lowercase;
 }
 h1 {
-    font-family: $heading-font;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 2.5rem;
+    margin: 10px 0px;
+    text-transform: lowercase;
+    span {
+        display: block;
+    }
+}
+h1, h2, h3, h4, h5 {
+    text-align: right;
+}
+/* border for section headings */
+.section-heading {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 2px solid $red;
+    }
+}
+h1.section-heading {
+    padding-bottom: 20px;
+}
+h2.section-heading {
+    padding-bottom: 10px;
+}
+h2 {
+    font-weight: bold;
+    font-style: italic;
+    margin: 10px 0px;
 }
 h3, h4, h5 {
     font-family: $body-font;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+/* logo typography styles */
+h1.header-logo,
+h1.footer-logo {
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 1.25rem;
+}
+p {
+    a:link,
+    a:visited {
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+.content-wrapper {
+    margin: 0px 20px;
+}
+.button-container {
+    display: block;
+    border: 2px solid $red;
+    cursor: pointer;
+    margin: 10px 0px;
+    padding: 10px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    a:link,
+    a:visited {
+        color: $red;
+        text-decoration: none;
+    }
+    &:hover {
+        background: $red;
+        border: 2px solid $red;
+        color: $white;
+        transition: .3s all;
+        a:link,
+        a:visited {
+            color: $white;
+        }
+    }
+}
+/* header */
+header {
+    background: $black;
+    color: $white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        nav {
+            background: $black;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            ul li {
+                display: inline-block;
+                list-style-type: none;
+                a:link,
+                a:visited {
+                    color: $white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    &:hover {
+                        border-bottom: 2px solid $white;
+                    }
+                }
+            }
+        }
+    }
+}
+/* menu */
+.hide-menu {
+    display: none;
+}
+#menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+/* hero */ 
+#hero {
+    background-image: url('/assets/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .hero-img {
+        display: none;
+    }
+    .content-wrapper {
+        height: 240px;
+        padding-top: 150px;
+        padding-bottom: 20px;
+        text-align: right;
+    }
+    h1 {
+        font-size: 5rem;
+        line-height: 3.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+        padding: 20px 0px;
+    }
+}
+/* padding for non-hero sections */
+#portfolio,
+#services,
+#contact {
+    padding: 30px 0px;
+}
+/* portfolio section */
+#portfolio {
+    h1, h2, h3, h4 {
+        text-align: left;
+    }
+    /* portfolio projects */
+    .portfolio-project-wrapper {
+        /* portfolio projects container */
+        article {
+            display: flex;
+            flex-direction: column;
+        }
+        img {
+            width: 100%;
+        }
+        .projects-menu {
+            h4 {
+                font-weight: 400;
+                margin: 0px;
+            }
+            .gallery-button-container {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0px;
+                button {
+                    background: $grey;
+                    border: none;
+                    color: $black;
+                    height: 20px;
+                    min-width: 22%;
+                    max-width: 25%;
+                    outline: none;
+                    text-transform: uppercase;
+                    &:hover {
+                        background: $red;
+                        color: $white;
+                        cursor: pointer;
+                        transition: .3s all;
+                    }
+                }
+                button.active-button {
+                    background: $red;
+                    color: $white;
+                }
+            }
+        }
+        .project-details {
+            padding: 20px 0px;
+            .gallery-photo-container {
+                position: relative;
+                .gallery-project-name {
+                    background: $white;
+                    color: $red;
+                    font-size: .75rem;
+                    padding: 5px 10px;
+                    position: absolute;
+                    bottom: 25px;
+                    right: 0;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+/* services section */
+#services {
+    article {
+        padding: 20px 0px;
+    }
+    aside {
+        margin: 20px 0px;
+        width: 100%;
+        height: 250px;
+        &:nth-of-type(1) {
+            background-image: url('/assets/img/filler-03.png');
+            background-size: cover;
+        }
+        p {
+            margin: 0 auto;
+            max-width: 300px;
+            padding-top: 100px;
+            text-align: center;
+        }
+    }
+    .button-container {
+        margin: 20px 0px;
+    }
+}
+/* contact section */
+#contact {
+    h1 {
+        text-align: left;
+    }
+    img {
+        padding: 20px 0px;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+}
+/* footer */
+footer {
+    .content-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-logo {
+        margin: 0;
+        padding: 20px 0px;
+        text-align: left;
+    }
+    .footer-social-media {
+        ul {
+            list-style-type: none;
+            li {
+                display: inline-block;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+/* desktop & tablet styles */
+@media screen and (min-width: 768px) {
+    .content-wrapper {
+        margin: 0px 40px;
+    }
+    body {
+        font-size: 18px;
+    }
+    /* typography */
+    h1 {
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+    /* header & navigation */
+    .hide-menu {
+        display: block !important; /* override hidden navigation on large screens */ 
+      }
+      #menu-toggle {
+        display: none; /* hide hamburger button */
+      }
+      nav {
+        left: auto !important; 
+        right: 40px; /* use absolute positioning to push links to right side of container */
+        top: 20px !important;
+        width: auto !important; /* reset width */ 
+        height: auto !important;
+      }
+      nav ul li {
+        display: inline-block; /* display links side by side */ 
+        margin-left: 40px;
+      }
+      .button-container {
+        width: fit-content;
+        padding: 10px 20px;
+        }
+      /* hero section */
+      #hero {
+          display: flex;
+          flex-flow: row-reverse nowrap;
+          .content-wrapper {
+              background: $red;
+              margin-right: 0px;
+              padding: 280px 40px 60px 40px;
+              width: 40%;
+          }
+      }
+      /* portfolio */
+      #portfolio {
+          padding-bottom: 60px;
+          .portfolio-heading {
+              width: 30%;
+          }
+          .portfolio-project-wrapper {
+              article {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                aside.project-details {
+                    flex-basis: 45%;
+                    .gallery-project-name {
+                        font-size: 1rem !important;
+                        left: 0 !important;
+                        right: auto !important;
+                    }
+                    .project-links {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-between;
+                        padding: 10px 0px;
+                    }
+                }
+                aside.project-copy {
+                    flex-basis: 50%;
+                }
+                aside.projects-menu {
+                    flex-basis: 100%;
+                }
+              }
+          }
+      }
+      /* services */
+#services {
+    .section-heading.section-title {
+        &::after {
+            width: 30%;
+            left: auto !important;
+            right: 0 !important;
+        }
+    }
+    .services-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        .button-container {
+            width: 100%;
+            padding: inherit;
+        }
+        article {
+            width: 30%;
+        }
+        aside {
+            height: 400px;
+        }
+        p {
+            padding-top: 170px;
+        }
+    }
+}
+          /* contact section */
+    #contact {
+        padding-bottom: 60px;
+        .contact-container {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            article {
+                flex-basis: 45%;
+                p {
+                    padding: 30px 0px;
+                }
+            }
+            aside {
+                flex-basis: 30%;
+            }
+        }
+        .section-heading.section-title {
+            &::after {
+                width: 30%;
+            }
+        }
+    }
 }

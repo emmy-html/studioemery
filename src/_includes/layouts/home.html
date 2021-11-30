@@ -1,6 +1,102 @@
-{% extends "layouts/base.html" %} {% block content %}
-<article>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-</article>
+{% extends "layouts/base.html" %} 
+{% block content %}
+<section id="hero" class="red-section">
+  <img src="/assets/img/hero.png" class="hero-img" alt="" />
+  <div class="content-wrapper">
+    <h1>Studio <span>Emery</span></h1>
+    <h3 class="section-heading">Web Development + Design</h3>
+  </div>
+</section>
+<section id="portfolio">
+  <div class="content-wrapper">
+    <h1 class="section-heading portfolio-heading">Recent Work</h1>
+    <div class="portfolio-project-wrapper">
+      <article>
+        <aside class="project-details">
+          <div class="gallery-photo-container">
+            <p class="gallery-project-name">
+              Black Digital Archives
+            </p>
+            <img src="/assets/img/filler.png" alt="" />
+          </div>
+          <div class="project-links">
+            <div class="button-container">
+              <a href="#" class="active-button">View Project</a>
+            </div>
+            <div class="button-container">
+              <a href="#">Repository</a>
+            </div>
+          </div>
+        </aside>
+        <aside class="project-copy">
+          <h1 class="section-heading">Black Digital Archives</h1>
+          <h3>HTML, CSS, JavaScript, Eleventy</h3>
+          <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Magna sit amet purus gravida quis blandit turpis cursus in. Eget duis at tellus at urna condimentum mattis pellentesque id. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Quis eleifend quam adipiscing vitae proin sagittis nisl. Ac odio tempor orci dapibus ultrices in iaculis. Nunc lobortis mattis aliquam faucibus purus in. Placerat orci nulla pellentesque dignissim enim sit amet venenatis. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin. Faucibus interdum posuere lorem ipsum dolor sit amet.</p>
+          <div class="button-container">
+            <a href="#">Read More</a>
+          </div>
+        </aside>
+        <aside class="projects-menu">
+          <h4>Browse Projects</h4>
+          <div class="gallery-button-container">
+            <button class="active-button">Black Digital Archives</button>
+            <button>Meals On Wheels + CNNSSA</button>
+            <button>Practicing Liberation</button>
+            <button>Vibe Check</button>
+          </div>
+        </aside>
+      </article>
+    </div>
+  </div>  
+</section>
+<section id="services" class="red-section">
+  <div class="content-wrapper">
+    <h1 class="section-heading section-title">Services</h1>
+    <div class="services-container">
+      <article>
+        <aside>
+          <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt.</p>
+        </aside>
+        <h2 class="section-heading">WordPress</h2>
+        <div class="button-container">
+          <a href="#">Learn More</a>
+        </div>
+      </article>
+      <article>
+        <aside>
+          <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt.</p>
+        </aside>
+        <h2 class="section-heading">Design</h2>
+        <div class="button-container">
+          <a href="#">Learn More</a>
+        </div>
+      </article>
+      <article>
+        <aside>
+          <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt.</p>
+        </aside>
+        <h2 class="section-heading">Freelance</h2>
+        <div class="button-container">
+          <a href="#">Learn More</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="contact" class="black-section">
+  <div class="content-wrapper">
+    <h1 class="section-heading section-title">Contact</h1>
+    <div class="contact-container">
+      <article>
+        <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Magna sit amet purus gravida quis blandit turpis cursus in. Eget duis at tellus at urna condimentum mattis pellentesque id. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Quis eleifend quam adipiscing vitae proin sagittis nisl. Ac odio tempor orci dapibus ultrices in iaculis. Nunc lobortis mattis aliquam faucibus purus in. Placerat orci nulla pellentesque dignissim enim sit amet venenatis.</p>
+        <div class="button-container">
+          <a href="#">Let's Work</a>
+        </div>
+      </article>
+      <aside>
+        <img src="/assets/img/filler-01.png" />
+      </aside>
+    </div>
+  </div>
+</section>
 {% endblock %}

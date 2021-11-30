@@ -1,0 +1,56 @@
+$white: #ffffff;
+$black: #000000;
+$red: #671849;
+$grey: #C4C4C4;
+$soft-black: rgba(0, 0, 0, 0.75);
+/* color specific layouts */
+.red-section {
+    background: $red;
+    color: $white;
+    .section-heading {
+        &::after {
+            border-bottom: 2px solid $white;
+        }
+    }
+    .button-container {
+        background: $white;
+        border: 2px solid $white;
+        a:link,
+        a:visited {
+            color: $red;
+        }
+        &:hover {
+            background: none;
+            border: 2px solid $white;
+            a:link,
+            a:visited {
+                color: $white;
+            }
+        }
+    }
+}
+.black-section {
+    background: $black;
+    color: $white;
+    .button-container {
+        background: $white;
+        border: 2px solid $white;
+        a:link,
+        a:visited {
+            color: $black;
+        }
+        &:hover {
+            background: transparent;
+            border: 2px solid $white;
+            a:link,
+            a:visited {
+                color: $white;
+            }
+        }
+    }
+    .section-heading {
+        &::after {
+            border-bottom: 2px solid $white;
+        }
+    }
+}

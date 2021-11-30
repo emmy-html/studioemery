@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "name": "Portfolio",
+            "url": "/#portfolio"
+        },
+        {
+            "name": "Services",
+            "url": "/#services"
+        },
+        {
+            "name": "Resume",
+            "url": "/#resume"
+        },
+        {
+            "name": "Contact",
+            "url": "/#contact"
+        }
+    ]
+}

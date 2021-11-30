@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "url": "mailto:em@studioemery.com",
+            "svg": "/assets/img/email.svg",
+            "alt": ""
+        },
+        {
+            "url": "https://www.linkedin.com/in/emmyjordan16/",
+            "svg": "/assets/img/linkedin.svg",
+            "alt": ""
+        },
+        {
+            "url": "https://github.com/emmy-html",
+            "svg": "/assets/img/github.svg",
+            "alt": ""
+        }
+    ]
+}
